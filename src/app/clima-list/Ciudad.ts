@@ -3,4 +3,5 @@ export interface Ciudad {
     "tiempo" : string,
     "temperatura" : number,
     "llueve" : boolean,
+    "favorita" : boolean
 }

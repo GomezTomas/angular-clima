@@ -1,14 +1,17 @@
 <ul class="list-group">
     @for (ciudad of ciudades; track ciudad.nombre) {
-        <button type="button" class="list-group-item list-group-item-action" aria-current="true">
+        <span class="list-group-item item-lista" aria-current="true" [ngClass]="{'favorita' : ciudad.favorita}">
             <span>{{ciudad.nombre}}</span>
             <span>
                 @if(ciudad.llueve) {
                     <img src="img/lluvioso.png" alt="llueve">
                 }
                 {{ciudad.temperatura}}°
+                <button class="btn btn-outline-warning" (click)="toggleFavorito(ciudad)">Favoritos ⭐</button>
+
             </span>
-        </button>
+
+        </span>
     } @empty {
         <button type="button" class="list-group-item list-group-item-action" aria-current="true">
             <span>No existen ciudades</span>

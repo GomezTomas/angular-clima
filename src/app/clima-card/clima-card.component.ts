@@ -13,5 +13,6 @@ export class ClimaCardComponent {
       "tiempo" : "soleado",
       "temperatura" : 18,
       "llueve" : false,
+      "favorita" : false
     }
 }
