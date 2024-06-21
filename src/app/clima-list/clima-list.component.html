@@ -1,11 +1,17 @@
 <ul class="list-group">
-    <button type="button" class="list-group-item list-group-item-action" aria-current="true">
-        <span>Tandil</span> <span>18°</span>
-    </button>
-    <button type="button" class="list-group-item list-group-item-action" aria-current="true">
-        <span>Azul</span> <span>18°</span>
-    </button>
-    <button type="button" class="list-group-item list-group-item-action" aria-current="true">
-        <span>Olavarria</span> <span>18°</span>
-    </button>
+    @for (ciudad of ciudades; track ciudad.nombre) {
+        <button type="button" class="list-group-item list-group-item-action" aria-current="true">
+            <span>{{ciudad.nombre}}</span>
+            <span>
+                @if(ciudad.llueve) {
+                    <img src="img/lluvioso.png" alt="llueve">
+                }
+                {{ciudad.temperatura}}°
+            </span>
+        </button>
+    } @empty {
+        <button type="button" class="list-group-item list-group-item-action" aria-current="true">
+            <span>No existen ciudades</span>
+        </button>
+    }
 </ul>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Ciudad } from '../clima-list/Ciudad';
 
 @Component({
   selector: 'app-clima-card',
@@ -6,9 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './clima-card.component.scss'
 })
 export class ClimaCardComponent {
-  ciudad = {
-    "nombre" : "Tandil",
-    "tiempo" : "soleado",
-    "temperatura" : 18,
-  }
+  ciudad : Ciudad =
+    {
+      "nombre" : "Tandil",
+      "tiempo" : "soleado",
+      "temperatura" : 18,
+      "llueve" : false,
+    }
 }
