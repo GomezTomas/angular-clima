@@ -8,6 +8,7 @@
                 }
                 {{ciudad.temperatura}}°
                 <button class="btn btn-outline-warning" (click)="toggleFavorito(ciudad)">Favoritos ⭐</button>
+                <a [routerLink]="['/ciudad/', ciudad.nombre]"><button class="btn btn-outline-primary">Detalles ></button></a>
 
             </span>
 
