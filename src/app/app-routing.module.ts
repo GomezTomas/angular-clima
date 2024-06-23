@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClimaHomeComponent } from './clima-home/clima-home.component';
-import { CiudadDetalleComponent } from './ciudad-detalle/ciudad-detalle.component';
+import { PronosticoExtendidoComponent } from './pronostico-extendido/pronostico-extendido.component';
 
 const routes: Routes = [
   {
@@ -14,9 +14,9 @@ const routes: Routes = [
     component: ClimaHomeComponent,
   },
   {
-    path: 'ciudad/:nombre',
-    component: CiudadDetalleComponent,
-  },
+    path: 'pronostico/:nombre',
+    component: PronosticoExtendidoComponent,
+  }
 ];
 
 @NgModule({

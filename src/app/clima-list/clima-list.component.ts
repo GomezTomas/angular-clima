@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Ciudad } from './Ciudad';
+import { ClimaCardService } from '../clima-card.service';
 
 @Component({
   selector: 'app-clima-list',
@@ -13,7 +14,7 @@ export class ClimaListComponent {
       "tiempo" : "nublado",
       "temperatura" : 18,
       "llueve" : false,
-      "favorita" : true,
+      "favorita" : false,
     },
     {
       "nombre" : "Azul",
@@ -31,7 +32,19 @@ export class ClimaListComponent {
     }
   ]
 
+  constructor(private climaCard: ClimaCardService){
+
+  }
   toggleFavorito(ciudad: Ciudad){
     ciudad.favorita = !ciudad.favorita;
+    console.log(ciudad)
+    this.climaCard.toggleFavorito(ciudad);
   }
+  ngOnInit() : void{
+    console.log(this.ciudades)
+  }
+
+  // setCard(ciudad: Ciudad){
+  //   this.climaCard.setCard(ciudad);
+  // }
 }

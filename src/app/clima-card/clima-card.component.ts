@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Ciudad } from '../clima-list/Ciudad';
+import { ClimaCardService } from '../clima-card.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-clima-card',
@@ -7,12 +9,9 @@ import { Ciudad } from '../clima-list/Ciudad';
   styleUrl: './clima-card.component.scss'
 })
 export class ClimaCardComponent {
-  ciudad : Ciudad =
-    {
-      "nombre" : "Tandil",
-      "tiempo" : "soleado",
-      "temperatura" : 18,
-      "llueve" : false,
-      "favorita" : false
-    }
+  ciudad: Ciudad;
+  city$: Observable<Ciudad[]>;
+  constructor(private climaCard: ClimaCardService){
+    this.city$ = climaCard.ciudades.asObservable();
+  }
 }

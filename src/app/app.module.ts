@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { ClimaCardComponent } from './clima-card/clima-card.component';
 import { ClimaListComponent } from './clima-list/clima-list.component';
 import { ClimaHomeComponent } from './clima-home/clima-home.component';
-import { CiudadDetalleComponent } from './ciudad-detalle/ciudad-detalle.component';
+import { PronosticoExtendidoComponent } from './pronostico-extendido/pronostico-extendido.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { CiudadDetalleComponent } from './ciudad-detalle/ciudad-detalle.componen
     ClimaCardComponent,
     ClimaListComponent,
     ClimaHomeComponent,
-    CiudadDetalleComponent
+    PronosticoExtendidoComponent,
   ],
   imports: [
     BrowserModule,
