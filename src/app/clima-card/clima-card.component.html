@@ -1,13 +1,3 @@
-
-<!-- <div class="card">
-    <img src="img/{{(city$ | async )?.tiempo}}.png" class="card-img-top" alt="{{(city$ | async )?.tiempo}}">
-    <span class="card-text">{{(city$ | async )?.tiempo}}</span>
-    <div class="card-body">
-      <h5 class="card-title">{{(city$ | async )?.nombre}}</h5>
-      <span class="card-text">{{(city$ | async )?.temperatura}}</span>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div> -->
 <div class="container">
 @for (city of city$ | async; track city.nombre) {
   <div class="card">
@@ -21,13 +11,8 @@
   </div>
 } @empty {
   <div class="card">
-    <!-- <img src="img/{{(city$ | async )?.tiempo}}.png" class="card-img-top" alt="{{(city$ | async )?.tiempo}}"> -->
-    <!-- <span class="card-text">{{(city$ | async )?.tiempo}}</span> -->
     <div class="card-body">
       <h5 class="card-title">Agregue una ciudad a favoritos para visualizarla!</h5>
-      <!-- <span class="card-text">{{(city$ | async )?.temperatura}}</span> -->
-      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
     </div>
   </div>
   }
-<!-- </div>  -->

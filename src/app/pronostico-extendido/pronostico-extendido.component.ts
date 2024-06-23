@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './pronostico-extendido.component.scss'
 })
 export class PronosticoExtendidoComponent {
-  ciudadNombre:any;
+  ciudadNombre: any;
   constructor(private activatedRoute: ActivatedRoute){
 
   }

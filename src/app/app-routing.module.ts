@@ -16,7 +16,7 @@ const routes: Routes = [
   {
     path: 'pronostico/:nombre',
     component: PronosticoExtendidoComponent,
-  }
+  },
 ];
 
 @NgModule({
