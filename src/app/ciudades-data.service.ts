@@ -16,7 +16,7 @@ export class CiudadesDataService {
   }
 
   private getCity(ciudad: string): void{
-    let url = `https://api.weatherapi.com/v1/current.json?key=0df082da6595465fbd711733242206&q=${ciudad}&lang=es`
+    let url = `https://api.weatherapi.com/v1/current.json?key=0df082da6595465fbd711733242206&q=${ciudad}&lang=es`;
     this.http.get<any>(url)
       .subscribe( data => {
         const {location, current} = data;

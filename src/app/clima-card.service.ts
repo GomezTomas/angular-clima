@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 export class ClimaCardService {
 
   private _ciudades: Ciudad[] = [];
-  ciudades: BehaviorSubject<Ciudad[]> = new BehaviorSubject<Ciudad[]>([])
+  ciudades: BehaviorSubject<Ciudad[]> = new BehaviorSubject<Ciudad[]>([]);
 
   toggleFavorito(ciudad: Ciudad){
     if (ciudad.favorita) {
@@ -18,7 +18,7 @@ export class ClimaCardService {
           return -1;
         }
           else return 1;
-        })
+        });
         this.ciudades.next(this._ciudades);
     } else {
       let index = this._ciudades.indexOf(ciudad);

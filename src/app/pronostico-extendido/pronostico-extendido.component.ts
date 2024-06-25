@@ -1,16 +1,13 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PronosticoExtendidoService } from '../pronostico-extendido.service';
-import { Observable, delay } from 'rxjs';
+import { Observable } from 'rxjs';
 import { CiudadPronosticoExtendido } from '../clima-list/Ciudad';
 
 @Component({
   selector: 'app-pronostico-extendido',
   templateUrl: './pronostico-extendido.component.html',
-  styleUrl: './pronostico-extendido.component.scss',
-  providers: [
-    {provide: 'nombreCiudad', useValue: 'tandil'},
-  ],
+  styleUrl: './pronostico-extendido.component.scss'
 })
 export class PronosticoExtendidoComponent {
   ciudadNombre: any;
