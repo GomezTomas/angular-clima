@@ -1,11 +1,11 @@
 <div class="container">
 @for (city of city$ | async; track city.nombre) {
   <div class="card">
-    <img src="img/{{city.tiempo}}.png" class="card-img-top" alt="{{city.tiempo}}">
+    <img src={{city.img}} class="card-img-top" alt="{{city.tiempo}}">
     <span class="card-text">{{city.tiempo }}</span>
     <div class="card-body">
       <h5 class="card-title">{{city.nombre }}</h5>
-      <span class="card-text">{{city.temperatura}}</span>
+      <span class="card-text">{{city.temperatura}}°</span>
       <a [routerLink]="['/pronostico/', city.nombre]" class="btn btn-primary btn-sm">Pronostico Extendido</a>
     </div>
   </div>

@@ -7,6 +7,8 @@ import { ClimaCardComponent } from './clima-card/clima-card.component';
 import { ClimaListComponent } from './clima-list/clima-list.component';
 import { ClimaHomeComponent } from './clima-home/clima-home.component';
 import { PronosticoExtendidoComponent } from './pronostico-extendido/pronostico-extendido.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { PronosticoExtendidoComponent } from './pronostico-extendido/pronostico-
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

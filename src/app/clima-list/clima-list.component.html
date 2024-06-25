@@ -1,5 +1,5 @@
 <ul class="list-group">
-    @for (ciudad of ciudades; track ciudad.nombre) {
+    @for (ciudad of ciudades$ | async; track ciudad.nombre) {
         <span class="list-group-item item-lista" aria-current="true" [ngClass]="{'favorita' : ciudad.favorita}">
             <span>{{ciudad.nombre}}</span>
             <span>
