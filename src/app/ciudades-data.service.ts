@@ -7,10 +7,10 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class CiudadesDataService {
-  private _ciudades: Ciudad[] = []
+  private _ciudades: Ciudad[] = [];
   ciudades: BehaviorSubject<Ciudad[]> = new BehaviorSubject<Ciudad[]>([]);
   constructor(private http: HttpClient) { 
-    this.getCity("Tokio");
+    this.getCity("Japan");
     this.getCity("Olavarria");
     this.getCity("Azul");
   }
@@ -21,14 +21,14 @@ export class CiudadesDataService {
       .subscribe( data => {
         const {location, current} = data;
         const {name} = location;
-        const {condition, temp_c, precip_mm} = current;
+        const {condition, temp_c, is_day} = current;
         const {text, icon} = condition;
         let ciudadFromData: Ciudad = {
           'nombre': name,
           'tiempo': text,
           'favorita': false,
           'temperatura': temp_c,
-          'llueve': (precip_mm > 0),
+          'esDeDia': (is_day > 0),
           'img': icon,
         };
         this._ciudades.push(ciudadFromData);

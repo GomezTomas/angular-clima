@@ -9,9 +9,8 @@ import { Observable } from 'rxjs';
   styleUrl: './clima-card.component.scss'
 })
 export class ClimaCardComponent {
-  ciudad: Ciudad;
-  city$: Observable<Ciudad[]>;
+  ciudades$: Observable<Ciudad[]>;
   constructor(private climaCard: ClimaCardService){
-    this.city$ = climaCard.ciudades.asObservable();
+    this.ciudades$ = climaCard.ciudades.asObservable();
   }
 }

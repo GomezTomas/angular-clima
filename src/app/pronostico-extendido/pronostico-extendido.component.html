@@ -1,1 +1,42 @@
-<p>pronostico extendido para {{ciudadNombre}}</p>
+@defer (on timer(800ms)) {
+    @if((ciudad$ | async); as ciudad){
+    
+     <h1>{{ciudad.nombre}}</h1>
+    
+     <table class="table">
+        <thead>
+            <th>Fecha</th>
+            <th>Temp Maxima</th>
+            <th>Temp Minima</th>
+            <th>Precipitaciones (mm)</th>
+            <th>Humedad</th>
+            <th>Probabilidades de lluvia</th>
+            <th>Hora amanecer</th>
+            <th>Hora atardecer</th>
+            <th>Condicion</th>
+        </thead>
+        <tbody>
+            @for(c of ciudad.diasPronosticoExtendido; track c.fecha){
+                <tr>
+                    <td>{{c.fecha | date: 'dd/MM/yyyy'}}</td>
+                    <td>{{c.temperaturaMaxima}}°</td>
+                    <td>{{c.temperaturaMinima}}°</td>
+                    <td>{{c.precipitaciones}} mm</td>
+                    <td>{{c.humedad}}%</td>
+                    <td>{{c.probabilidadDeLLuvia}}%</td>
+                    <td>{{c.amanecer}}</td>
+                    <td>{{c.atardecer}}</td>
+                    <td>
+                        <img src={{c.icono}}>
+                        {{c.condicion}}
+                    </td>
+                </tr>
+            }
+    
+        </tbody>
+     </table>
+    }
+
+} @placeholder () {
+    <p>Recuperando datos..</p>
+}

@@ -1,5 +1,5 @@
 <div class="container">
-@for (city of city$ | async; track city.nombre) {
+@for (city of ciudades$ | async; track city.nombre) {
   <div class="card">
     <img src={{city.img}} class="card-img-top" alt="{{city.tiempo}}">
     <span class="card-text">{{city.tiempo }}</span>
